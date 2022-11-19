@@ -1,0 +1,13 @@
+@import 'variables.module.scss';
+@import 'normalize.module.scss';
+
+.wrapper {
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	gap:10px;
+}
+
+.label {}
+
+.input {}

@@ -1,0 +1,48 @@
+@import './normalize.module.scss';
+@import './variables.module.scss';
+
+.wrapper {
+	width: 90%;
+	background-color: $color-white;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.row {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	padding: 10px;
+
+	p {
+		margin: 0;
+		font-size: 12px;
+		font-weight: 700;
+		color: black;
+	}
+
+	&.spaced {
+		justify-content: space-between;
+	}
+}
+
+.selected {
+	color: $color-primary !important;
+}
+
+.unselected {
+	color: $color-orange !important;
+}
+
+.buttons {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+
+	&.centered {
+		justify-content: center;
+	}
+}

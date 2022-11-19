@@ -1,0 +1,19 @@
+@import './variables.module.scss';
+
+.title {
+	color: pink;
+	font-size: 150px;
+}
+
+.container {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	background-color: $color-secondary;
+}
+
+
+.wrapper {
+	width: clamp($min-width, $preferred, $max-width);
+	height: 100vh;
+}
