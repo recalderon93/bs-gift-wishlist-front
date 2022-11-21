@@ -1,3 +1,9 @@
+import Invitation from './invitacion-bbshower-04.jpg'
+import styles from '../../styles/car.module.scss';
+
 export default function CardScreen() {
-	return <><h1>Card Screen</h1></>
+
+	return<div className={styles.wrapper}>
+		<img src={Invitation} alt="card" />
+	</div>
 } 

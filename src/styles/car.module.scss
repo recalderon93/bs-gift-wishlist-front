@@ -1,0 +1,14 @@
+@import './variables.module.scss';
+
+.wrapper {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	background-color: $color-secondary;
+	height: 100%;
+
+	img {
+		max-width: min(100vw, 600px);
+	}
+	
+}

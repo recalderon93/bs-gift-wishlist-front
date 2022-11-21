@@ -1,0 +1,29 @@
+@import './variables.module.scss';
+@import './normalize.module.scss';
+
+.label {
+	color: $color-orange;
+	font-weight: 700;
+	font-size: clamp(20px, 3.5vh, 32px);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+
+	/* position the top  edge of the element at the middle of the parent */
+	// left: 50%;
+	/* position the left edge of the element at the middle of the parent */
+	p {
+		transform: translateY(50%);
+	}
+}
+
+.wrapper {
+	position: relative;
+
+}

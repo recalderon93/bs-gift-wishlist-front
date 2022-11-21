@@ -15,8 +15,8 @@ export default function AppRoutes() {
 			<Route path="/card" element={<CardScreen />} />
 			<Route path="/admin/login" element={<AdminLoginScreen />} />
 			<Route path="/admin/gift-wishlist" element={<AdminGiftListScreen />} />
-			<Route path="/admin/add-item" element={<AdminEditItemScreen />} />
-			<Route path="/admin/edit-item" element={<AdminEditItemScreen />} />
+			<Route path="/admin/add-item" element={<AdminEditItemScreen type="add_item" />} />
+			<Route path="/admin/edit-item" element={<AdminEditItemScreen type="edit_item" />} />
 		</Routes>
 	)
 }

@@ -16,7 +16,7 @@ interface ButtonProps extends React.ComponentPropsWithoutRef<"button">{
 }
 
 export default function Button({ children,big, style,className, colorSchema="primary", ...props }: ButtonProps) {
-	return <button className={`${styles.button} ${big && styles.big} ${styles[colorSchema]}`}>
+	return <button className={`${styles.button} ${big && styles.big} ${styles[colorSchema]}`} {...props}>
 		{children}
 	</button>
 }

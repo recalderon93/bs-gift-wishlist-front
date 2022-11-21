@@ -6,9 +6,14 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #BBE7F2;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+	svg {
+		filter: drop-shadow(-30px 20px 5px rgba(64, 63, 63, 0.05))!important;
+	}

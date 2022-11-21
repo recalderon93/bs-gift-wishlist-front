@@ -15,5 +15,6 @@
 
 .wrapper {
 	width: clamp($min-width, $preferred, $max-width);
-	height: 100vh;
+	// height: 100vh;
+	padding-bottom: 10vh;
 }

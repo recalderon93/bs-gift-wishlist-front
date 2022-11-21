@@ -1,9 +1,12 @@
 import React from "react";
+import ContextProvider from "./context/provider";
 import AppRoutes from "./routes";
 
 function App() {
   return (
-    <AppRoutes />
+    <ContextProvider>
+      <AppRoutes />
+    </ContextProvider>
   );
 }
 

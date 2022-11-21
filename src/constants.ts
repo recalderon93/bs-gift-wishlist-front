@@ -1,0 +1,1 @@
+export const EVENT_DATE = new Date("nov 27 2022 16:30:00 GMT-0300");
