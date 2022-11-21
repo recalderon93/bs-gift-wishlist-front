@@ -42,7 +42,7 @@ export default function ContextProvider({ children }: Props) {
 	function selectItem(input: { _id: string }, cb?:(error:boolean)=>void) {
 		axios({
 			method:'patch',
-			url: "http://localhost:8002/select-item",
+			url: `${BASE_URI}/select-item`,
 			data: input,
 		}).then(response => {
 			console.log('select()', response);
@@ -62,7 +62,7 @@ export default function ContextProvider({ children }: Props) {
 	function addNewItem(input: GiftItemInterface, cb?:(error:boolean)=>void) {
 		axios({
 			method: 'post',
-			url: "http://localhost:8002/add-item",
+			url: `${BASE_URI}/add-item`,
 			data: input,
 		}).then(response => {
 			console.log('addNewItem()', response);
@@ -77,11 +77,11 @@ export default function ContextProvider({ children }: Props) {
 			cb&&cb(true);
 		})
 	}
-		function updateNewItem(_id: string, input: Partial<GiftItemInterface>,cb?:(error:boolean)=>void) { 
+	function updateNewItem(_id: string, input: Partial<GiftItemInterface>,cb?:(error:boolean)=>void) { 
 			try { 
 				axios({
 					method: 'put',
-					url: "http://localhost:8002/update-item",
+					url: `${BASE_URI}/update-item`,
 					data: {_id,...input}
 				}).then(response => {
 					console.log('updateNewItem', response);
@@ -96,12 +96,12 @@ export default function ContextProvider({ children }: Props) {
 				console.log(e);
 				cb && cb(true);
 			}
-		};
+	};
 	function deleteItem(input: { _id: string }, cb?: (error: boolean) => void) {
 		try { 
 			axios({
 				method: 'delete',
-				url: "http://localhost:8002/delete-item",
+				url: `${BASE_URI}/delete-item`,
 				data:input,
 			}).then((response) => {
 				console.log('deleteItem()', response);
