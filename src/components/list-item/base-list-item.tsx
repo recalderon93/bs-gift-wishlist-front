@@ -18,12 +18,12 @@ export default function BaseListItem({
 	return <div className={styles.wrapper}>
 		<div className={styles.row}>
 			<p>{index}</p>
-			<a href={href} target="_blank" rel="noreferrer">
+			<a className={styles.name_label} href={href} target="_blank" rel="noreferrer">
 				<p>{name}</p>
 			</a>
 			<p>Qty: {quantity}</p>
 			<div className={styles.buttons}>
-			<Button colorSchema={isSelected ? 'primary_inverted' : 'primary'} onClick={selectHandler}>
+			<Button disabled={disabled} colorSchema={isSelected ? 'primary_inverted' : 'primary'} onClick={selectHandler}>
 					<p>
 					{isSelected ? 'Selected Gift' : 'Select Gift'}
 					</p>

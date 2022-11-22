@@ -18,7 +18,7 @@ interface ContextInterface {
 		giftList: GiftItemInterface[]
 	};
 	getItems: () => void;
-	selectItem: (input:{_id:string},cb?:(error:boolean)=>void) => void;
+	selectItem: (input:{_id:string, qty:number},cb?:(error:boolean)=>void) => void;
 	addNewItem: (input: GiftItemInterface, cb?: (error: boolean)=>void) => void;
 	updateNewItem: (_id:string,input:Partial<GiftItemInterface>,cb?: (error:boolean)=>void) => void;
 	deleteItem: (input: { _id: string }, cb?:(error:boolean)=>void) => void;
@@ -39,7 +39,7 @@ export default function ContextProvider({ children }: Props) {
 		})
 	}
 	
-	function selectItem(input: { _id: string }, cb?:(error:boolean)=>void) {
+	function selectItem(input: { _id: string, qty: number }, cb?:(error:boolean)=>void) {
 		axios({
 			method:'patch',
 			url: `${BASE_URI}/select-item`,

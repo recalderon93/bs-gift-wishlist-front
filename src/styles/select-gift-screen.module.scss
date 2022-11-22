@@ -1,0 +1,84 @@
+@import './variables.module.scss';
+@import './normalize.module.scss';
+
+.wrapper {
+	padding: 7vh 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		font-family: 'Merienda One', cursive;
+		margin: 0;
+	}
+}
+
+.label_blue {
+	color: $color-primary;
+	text-align: center;
+	font-weight: 400;
+	font-size: 48px;
+	text-shadow: rgba(0, 0, 0, 0.2) 1px 0 10px;
+}
+
+.cloud {
+	position: relative;
+	margin: 5vh 0;
+	display: flex;
+	justify-content: center;
+
+	h2 {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+		font-size: 28px;
+		color: $color-primary;
+		text-shadow: rgba(0, 0, 0, 0.2) 1px 0 10px;
+		max-width: 80%;
+	}
+}
+
+.description {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
+	color: $color-primary;
+}
+
+.quantity {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	p {
+		font-size: 42px;
+		font-weight: 600;
+		text-align: center;
+		color: white;
+	}
+
+	svg {
+		cursor: pointer;
+
+		&:active {
+			opacity: 50%;
+
+		}
+	}
+}
+
+.disabled {
+	svg {
+		opacity: 50%;
+	}
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+
+	gap: 15px;
+
+}

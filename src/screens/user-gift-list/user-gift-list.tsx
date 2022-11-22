@@ -11,22 +11,7 @@ export default function UserGiftList() {
 	const [selected, setSelected] = useState<string | null>(null);
 	const { data } = useAppContext();
 	const navigate = useNavigate();
-	function goToCard(error:boolean) {
-		if (!error) {
 
-			navigate('/card')
-		} else {
-			alert('Ha ocurrido un Error, asegurese de que su IP no este registrada previamente')
-		}
-	}
-	function buttonHandler() {
-		if (selected) {
-			selectItem({ _id: selected },goToCard);
-
-		} else {
-			alert('Por favor selecciona un Regalo Primero')
-		}
-	}
 	return (
 		<ScreenWrapper className={styles.void}>
 			<div className={styles.wrapper}>
@@ -34,7 +19,9 @@ export default function UserGiftList() {
 				Gift List
 			</h1>
 			<div className={styles.content}>
-					{data.giftList.map((item, index) => (
+					{data.giftList
+						// .filter((item, index) => index < 5)
+						.map((item, index) => (
 						<BaseListItem
 							index={index + 1}
 							name={item.name}
@@ -43,24 +30,16 @@ export default function UserGiftList() {
 							//@ts-ignore
 							key={item._id}
 							//@ts-ignore
-							isSelected={!item.quantity > 0||item._id===selected}
+							// isSelected={!item.quantity > 0||item._id===selected}
+							disabled={item.quantity<1}
 							//@ts-ignore
 							selectHandler={() => {
-								if (!selected) {
-							//@ts-ignore
-									setSelected(item._id)
-								} else {
-									setSelected(null)
-								}
+								//@ts-ignore
+								navigate(`/select-item?quantity=${item.quantity}&_id=${item._id}&link=${item.link}&description=${item.description}&name=${item.name}`)
 							}}
 						/>
 						))}
 		</div>
-			<div className={styles.bottom}>
-				<Button big colorSchema="orange" onClick={buttonHandler}>
-					<p>Confirmar Selección</p>
-				</Button>
-			</div>
 		</div>
 		</ScreenWrapper>
 	)
